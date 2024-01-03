@@ -1,7 +1,7 @@
 import torch
 
 
-def mnist():
+def mnist(batch_size=256):
     """Return train and test dataloaders for MNIST."""
     train_images = []
     train_labels = []
@@ -24,6 +24,6 @@ def mnist():
     test_labels_path = f"c:\\Users\\magnu\\Documents\\GitHub Projects\\dtu_mlops\\data\\corruptmnist\\test_target.pt"
     test_labels_file = torch.load(test_labels_path)
     test_file = torch.utils.data.TensorDataset(test_images_file, test_labels_file)
-    testloader = torch.utils.data.DataLoader(test_file, batch_size=64, shuffle=True)
+    testloader = torch.utils.data.DataLoader(test_file, batch_size=256, shuffle=True)
 
     return trainloader, testloader
